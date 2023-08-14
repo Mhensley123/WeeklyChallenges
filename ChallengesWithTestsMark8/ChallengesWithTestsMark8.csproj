@@ -5,4 +5,8 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="C:\Users\mscel\repos\WeeklyChallenges\ChallengesSet05.cs" Link="ChallengesSet05.cs" />
+  </ItemGroup>
+
 </Project>

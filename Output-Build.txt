@@ -1,0 +1,6 @@
+﻿Build started...
+1>------ Build started: Project: ChallengesWithTestsMark8, Configuration: Debug Any CPU ------
+1>Skipping analyzers to speed up the build. You can execute 'Build' or 'Rebuild' command to run analyzers.
+1>C:\Users\mscel\repos\WeeklyChallenges\ChallengesWithTestsMark8\ChallengesSet05.cs(123,1,123,2): error CS1022: Type or namespace definition, or end-of-file expected
+1>Done building project "ChallengesWithTestsMark8.csproj" -- FAILED.
+========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========
