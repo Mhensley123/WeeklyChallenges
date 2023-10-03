@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace ChallengesWithTestsMark8
 {
@@ -28,53 +29,55 @@ namespace ChallengesWithTestsMark8
             }
             return result;
         }
-    }
 
-    public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)
-    {
-        for (int i = 0; i < businesses.Length; i++)
+
+        public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)
         {
-            if (businesses[i].TotalRevenue == 0)
+            for (int i = 0; i < businesses.Length; i++)
             {
-                businesses[i].Name = "CLOSED";
+                if (businesses[i].TotalRevenue == 0)
+                {
+                    businesses[i].Name = "CLOSED";
+                }
             }
         }
-    }
 
-    public bool IsAscendingOrder(int[] numbers)
-    {
-        if (numbers == null || numbers.Length == 0)
-        {
-            return false;
-        }
-        for (int i = 1; i < numbers.Length; i++)
-        {
 
-            if (numbers[i] < numbers[i - 1])
+        public bool IsAscendingOrder(int[] numbers)
+        {
+            if (numbers == null || numbers.Length == 0)
             {
                 return false;
             }
+            for (int i = 1; i < numbers.Length; i++)
+            {
+
+                if (numbers[i] < numbers[i - 1])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
-        return true;
-    }
-            
-    
+
+
+
 
         public int SumElementsThatFollowAnEven(int[] numbers)
         {
             if (numbers == null || numbers.Length == 0)
-        {
-            return 0;
-        }
-        int sum = 0;
-
-        for (int i = 1; i < numbers.Length; i++)
-        {
-            if (numbers[i - 1] % 2 == 0)
             {
-                sum += numbers[i];
+                return 0;
             }
-        }
+            int sum = 0;
+
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                if (numbers[i - 1] % 2 == 0)
+                {
+                    sum += numbers[i];
+                }
+            }
             return sum;
         }
 
@@ -84,40 +87,61 @@ namespace ChallengesWithTestsMark8
             {
                 return "";
             }
-        
-        int goodwords = 0;
-        List<string> wordlist = new List<string>();
 
-        for (int i = 0; i < words.Length; i++)
+            int goodwords = 0;
+            List<string> wordlist = new List<string>();
+
+            for (int i = 0; i < words.Length; i++)
             {
                 if (words[i] == "" || words[i] == " " || words[i] == " ")
+
                 {
-               
-                }
-                else
-                    {
                     wordlist.Add(words[i].Trim());
                     goodwords += 1;
-                    }
+                }
             }
-                if (goodwords == 0)
-        {
-            return "";
-        }
-                else
-         {
-            return String.Join(" ", wordlist) + ".";
-        }
+            if (goodwords == 0)
+            {
+                return "";
+            }
+            else
+            {
+                return String.Join(" ", wordlist) + ".";
+            }
         }
 
         public double[] GetEveryFourthElement(List<double> elements)
         {
-            throw new NotImplementedException();
+            if (elements == null || elements.Count == 0)
+            {
+                return new double[0];
+            }
+            List<double> everyFourth = new List<double>();
+            for (int i = 3; i < elements.Count; i += 4)
+            {
+                everyFourth.Add(elements[i]);
+            }
+            return everyFourth.ToArray();
         }
-
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                for (int k = i + 1; k < nums.Length; k++)
+                {
+                    if (nums[i] + nums[k] == targetNumber)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
+        
+        
     }
 }
+
+
+
+
